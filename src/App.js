@@ -7,6 +7,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+      <nav className="navbar navbar-dark bg-dark p-3">
+        <NavLink to={"/"} className="navbar-brand">Globe Ranger</NavLink>
+      </nav>
       <Switch>
         <Route path={"/"} exact component={CountryListContainer}/>
         <Route path={"/country/:country"} exact component={CountryContainer}/>
