@@ -1,10 +1,13 @@
+import {BrowserRouter,Switch, Route, NavLink, Redirect} from 'react-router-dom'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>STARTING</h1>
-    </div>
+    
+      <div className="App">
+        
+      </div>
+    
   )
 }
 
