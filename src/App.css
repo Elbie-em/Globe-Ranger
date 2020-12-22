@@ -7,13 +7,39 @@ body {
 }
 
 .brand-font {
-  font-size: 30px;
+  font-size: 40px;
   text-decoration: none;
   color: #ffffff;
+  font-family: 'Comfortaa', cursive;
 }
 
-.countryList {
+.country-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.flag-sm {
+  width: 317px;
+  height: 232px;
+}
+
+.flag-lg {
+  width: 50%;
+  height: 50%;
+}
+
+.country-info {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
 
