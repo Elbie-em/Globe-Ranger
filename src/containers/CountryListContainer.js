@@ -8,4 +8,10 @@ const CountryListContainer = () => {
   )
 }
 
+const mapStateToProps = state => {
+  return {
+    countryListData: state.countryList
+  }
+}
+
 export default CountryListContainer
