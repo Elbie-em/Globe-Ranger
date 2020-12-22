@@ -1,11 +1,31 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
+import CountryCard from '../components/CountryCard'
 import {fetchCountries} from '../redux'
 
-const CountryListContainer = () => {
+const CountryListContainer = ({countryListData, fetchCountries}) => {
+
+  useEffect(() => {
+    fetchCountries()
+  },[])
+
+  const showCountries = () => {
+    return countryListData.loading ? <h2>Loading...</h2> : countryListData.errorMsg ? <h2>{countryListData.errorMsg}</h2> : (
+      <div>
+        {console.log(countryListData.data)}
+        {
+          countryListData.data.map(country => <CountryCard country={country} />)
+        }
+      </div>
+    )
+  }
+
   return (
-    <div>
-      <h1>CountryList</h1>
+    <div className="countryList p-5">
+      {/* {showCountries()} */}
+      {
+        countryListData.data.map(country => <CountryCard country={country} />)
+      }
     </div>
   )
 }
