@@ -1,5 +1,6 @@
 import React from 'react'
 import { numberWithCommas } from '../dataOperations/conversions'
+import PropTypes from 'prop-types';
 
 const CountryDetail = ({countryDetails}) => {
   return (
@@ -24,6 +25,10 @@ const CountryDetail = ({countryDetails}) => {
     </div>
     
   )
+}
+
+CountryDetail.propTypes = {
+  countryDetails: PropTypes.object,
 }
 
 export default CountryDetail

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const Regions = ['All Countries','Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
@@ -21,6 +22,10 @@ const RegionFilter = ({handleChange}) => {
     </div>
   )
 }
+
+RegionFilter.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+};
 
 export default RegionFilter
 

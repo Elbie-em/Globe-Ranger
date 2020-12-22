@@ -5,6 +5,7 @@ import _ from "lodash"
 import CountryDetail from '../components/CountryDetail'
 import {Link} from 'react-router-dom'
 import LoadingSpinner from '../components/LoadingSpinner'
+import PropTypes from 'prop-types';
 
  const CountryContainer  = ({match,country,fetchCountry,}) => {
    const countryName = match.params.country
@@ -50,6 +51,11 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchCountry : (name) => dispatch(fetchCountry(name))
   }
+}
+
+CountryContainer.propTypes = {
+  country: PropTypes.arrayOf(PropTypes.object).isRequired,
+  fetchCountry:PropTypes.func.isRequired,
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(CountryContainer)

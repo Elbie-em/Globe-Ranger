@@ -4,6 +4,7 @@ import CountryCard from '../components/CountryCard'
 import LoadingSpinner from '../components/LoadingSpinner'
 import {changeRegion, fetchCountries} from '../redux'
 import RegionFilter from '../components/RegionFilter'
+import PropTypes from 'prop-types';
 
 const CountryListContainer = ({countryListData, fetchCountries, changeRegion}) => {
 
@@ -56,6 +57,12 @@ const mapDispatchToProps = dispatch => {
     fetchCountries : () => dispatch(fetchCountries()),
     changeRegion: region => dispatch(changeRegion(region))
   }
+}
+
+CountryListContainer.propTypes = {
+  countryListData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  fetchCountries:PropTypes.func.isRequired,
+  changeRegion:PropTypes.func.isRequired
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(CountryListContainer)

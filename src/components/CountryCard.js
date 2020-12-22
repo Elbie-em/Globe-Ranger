@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { numberWithCommas } from '../dataOperations/conversions'
+import PropTypes from 'prop-types';
 
 const CountryCard = ({ country }) => {
   return (
@@ -17,6 +18,10 @@ const CountryCard = ({ country }) => {
       </div>
     </div>
   )
+}
+
+CountryCard.propTypes = {
+  country: PropTypes.object,
 }
 
 export default CountryCard
