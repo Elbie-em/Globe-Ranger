@@ -14,4 +14,10 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCountries : () => dispatch(fetchUsers())
+  }
+}
+
 export default CountryListContainer
