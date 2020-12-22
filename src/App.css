@@ -43,3 +43,21 @@ body {
   text-align: right;
 }
 
+.region-filter {
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.region-label {
+  font-size: 20px;
+  color: #ffffff;
+  font-family: 'Comfortaa', cursive;
+}
+
+.region-area {
+  width: 1OO%;
+  margin: 20px;
+}
