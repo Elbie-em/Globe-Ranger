@@ -10,8 +10,8 @@ function App() {
     <BrowserRouter>
       <Provider store={store}>
         <div className="App">
-          <nav className="navbar navbar-dark bg-dark p-3">
-            <NavLink to={"/"} className="navbar-brand">Globe Ranger</NavLink>
+          <nav className="navbar p-3">
+            <NavLink to={"/"} className="navbar-brand brand-font">Globe Ranger</NavLink>
           </nav>
           <Switch>
             <Route path={"/"} exact component={CountryListContainer}/>
