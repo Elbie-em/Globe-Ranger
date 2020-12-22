@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import CountryCard from '../components/CountryCard'
+import LoadingSpinner from '../components/LoadingSpinner'
 import {fetchCountries} from '../redux'
 
 const CountryListContainer = ({countryListData, fetchCountries}) => {
@@ -11,12 +12,12 @@ const CountryListContainer = ({countryListData, fetchCountries}) => {
 
   console.log(countryListData.data)
   const showCountries = () => {
-    return countryListData.loading ? <h2>Loading...</h2> : countryListData.errorMsg ? <h2>{countryListData.errorMsg}</h2> : (
+    return countryListData.loading ? <LoadingSpinner /> : countryListData.errorMsg ? <h2>{countryListData.errorMsg}</h2> : (
       <div className="countryList p-5">
         {
           countryListData.data.map(country => <CountryCard key={country.name} country={country} />)
         }
-    </div>
+      </div>
     )
   }
 
