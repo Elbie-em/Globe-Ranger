@@ -10,7 +10,7 @@ import LoadingSpinner from '../components/LoadingSpinner'
    const countryName = match.params.country
    useEffect(() => {
     fetchCountry(countryName)
-  },[])
+  },[fetchCountry,countryName])
 
   const showData = () => {
     if(!_.isEmpty(country.data[0])){
