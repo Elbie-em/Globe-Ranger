@@ -1,3 +1,4 @@
+import axios from 'axios'
 import {FETCH_COUNTRIES_REQUEST, FETCH_COUNTRIES_SUCCESS, FETCH_COUNTRIES_FAILURE} from './countryListTypes'
 
 export const fetchCountriesRequest = () => {
@@ -19,3 +20,4 @@ export const fetchCountriesFailure = (error) => {
     payload: error
   }
 }
+
