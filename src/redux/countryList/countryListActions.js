@@ -17,12 +17,12 @@ export const fetchCountriesFailure = error => ({
 
 export const fetchCountries = () => dispatch => {
   dispatch(fetchCountriesRequest());
-  axios.get('https://restcountries.eu/rest/v2/all')
+  return axios.get('https://restcountries.eu/rest/v2/all')
     .then(response => {
       const countryListData = response.data;
-      dispatch(fetchCountriesSuccess(countryListData));
+      return dispatch(fetchCountriesSuccess(countryListData));
     }).catch(error => {
       const errorMsg = error.message;
-      dispatch(fetchCountriesFailure(errorMsg));
+      return dispatch(fetchCountriesFailure(errorMsg));
     });
 };
