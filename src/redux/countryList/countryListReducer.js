@@ -27,6 +27,7 @@ const countryListReducer = (state = initialState, action) => {
         data: [],
         errorMsg: action.payload,
       }
+    default: return state
   }
 }
 
