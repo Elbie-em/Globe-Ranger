@@ -21,3 +21,16 @@ export const fetchCountriesFailure = (error) => {
   }
 }
 
+export const fetchCountries = () => {
+  return (dispatch) => {
+    dispatch(fetchCountriesRequest())
+    axios.get("https://restcountries.eu/rest/v2/all")
+    .then(response => {
+      const countryListData = response.data
+      dispatch(fetchCountriesSuccess(countryListData))
+    }).catch(error => {
+      const errorMsg = error.message
+      dispatch(fetchCountriesFailure(errorMsg))
+    })
+  }
+}
