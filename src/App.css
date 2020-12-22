@@ -9,7 +9,7 @@ body {
 .brand-font {
   font-size: 40px;
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   font-family: 'Comfortaa', cursive;
 }
 
@@ -53,11 +53,11 @@ body {
 
 .region-label {
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   font-family: 'Comfortaa', cursive;
 }
 
 .region-area {
-  width: 1OO%;
+  width: 100%;
   margin: 20px;
 }

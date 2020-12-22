@@ -1,34 +1,34 @@
-import {FETCH_COUNTRY_REQUEST, FETCH_COUNTRY_SUCCESS, FETCH_COUNTRY_FAILURE} from './countryTypes'
+import { FETCH_COUNTRY_REQUEST, FETCH_COUNTRY_SUCCESS, FETCH_COUNTRY_FAILURE } from './countryTypes';
 
 const initialState = {
   loading: true,
   data: [],
-  errorMsg: ''
-}
+  errorMsg: '',
+};
 
 const countryReducer = (state = initialState, action) => {
-  switch(action.type){
+  switch (action.type) {
     case FETCH_COUNTRY_REQUEST:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case FETCH_COUNTRY_SUCCESS:
       return {
         ...state,
         loading: false,
         data: action.payload,
         errorMsg: '',
-      }
+      };
     case FETCH_COUNTRY_FAILURE:
       return {
         ...state,
         loading: false,
         data: [],
         errorMsg: action.payload,
-      }
-    default: return state
+      };
+    default: return state;
   }
-}
+};
 
-export default countryReducer
+export default countryReducer;

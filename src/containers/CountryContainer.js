@@ -1,61 +1,56 @@
-import React, {useEffect} from 'react'
-import {connect} from 'react-redux'
-import {fetchCountry} from '../redux'
-import _ from "lodash"
-import CountryDetail from '../components/CountryDetail'
-import {Link} from 'react-router-dom'
-import LoadingSpinner from '../components/LoadingSpinner'
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import _ from 'lodash';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { fetchCountry } from '../redux';
+import CountryDetail from '../components/CountryDetail';
+import LoadingSpinner from '../components/LoadingSpinner';
 
- const CountryContainer  = ({match,country,fetchCountry,}) => {
-   const countryName = match.params.country
-   useEffect(() => {
-    fetchCountry(countryName)
-  },[fetchCountry,countryName])
+const CountryContainer = ({ match, country, fetchCountry }) => {
+  const countryName = match.params.country;
+  useEffect(() => {
+    fetchCountry(countryName);
+  }, [fetchCountry, countryName]);
 
-  const showData = () => {
-    if(!_.isEmpty(country.data[0])){
-      const countryDetails = country.data[0]
-      console.log(countryDetails.currencies[0].symbol)
-      return <CountryDetail countryDetails={countryDetails}/>
+  const showCountry = () => {
+    if (!_.isEmpty(country.data[0])) {
+      const countryDetails = country.data[0];
+      return <CountryDetail countryDetails={countryDetails} />;
     }
 
-    if(country.loading){
-      return <LoadingSpinner />
+    if (country.loading) {
+      return <LoadingSpinner />;
     }
-    if(country.errorMsg !== "") {
-    return <p>{country.errorMsg}</p>
+    if (country.errorMsg !== '') {
+      return <p className="text-danger mt-5">{country.errorMsg}</p>;
     }
 
-    return <p className="text-white">Error Loading Country Details</p>
-
-  }
+    return <p className="text-danger mt-5">Error Loading Country Details!</p>;
+  };
 
   return (
     <div className="mt-3 container-fluid p-5">
-      <Link className="btn btn-danger" to={"/"}>Back to Home</Link>
+      <Link className="btn btn-danger" to="/">Back to Home</Link>
       <br />
       <br />
-      {showData()}
+      {showCountry()}
     </div>
-  )
-}
+  );
+};
 
-const mapStateToProps = state => {
-  return {
-    country: state.country
-  }
-}
+const mapStateToProps = state => ({
+  country: state.country,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchCountry : (name) => dispatch(fetchCountry(name))
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  fetchCountry: name => dispatch(fetchCountry(name)),
+});
 
 CountryContainer.propTypes = {
+  match: PropTypes.string.isRequired,
   country: PropTypes.arrayOf(PropTypes.object).isRequired,
-  fetchCountry:PropTypes.func.isRequired,
-}
+  fetchCountry: PropTypes.func.isRequired,
+};
 
-export default connect(mapStateToProps,mapDispatchToProps)(CountryContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(CountryContainer);
