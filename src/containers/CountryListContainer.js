@@ -7,26 +7,23 @@ const CountryListContainer = ({countryListData, fetchCountries}) => {
 
   useEffect(() => {
     fetchCountries()
-  },[])
+  },[fetchCountries])
 
+  console.log(countryListData.data)
   const showCountries = () => {
     return countryListData.loading ? <h2>Loading...</h2> : countryListData.errorMsg ? <h2>{countryListData.errorMsg}</h2> : (
-      <div>
-        {console.log(countryListData.data)}
+      <div className="countryList p-5">
         {
-          countryListData.data.map(country => <CountryCard country={country} />)
+          countryListData.data.map(country => <CountryCard key={country.name} country={country} />)
         }
-      </div>
+    </div>
     )
   }
 
   return (
-    <div className="countryList p-5">
-      {/* {showCountries()} */}
-      {
-        countryListData.data.map(country => <CountryCard country={country} />)
-      }
-    </div>
+    <>
+    {showCountries()}
+    </>
   )
 }
 
