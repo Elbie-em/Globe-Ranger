@@ -13,7 +13,7 @@ const CountryListContainer = ({countryListData, fetchCountries}) => {
   console.log(countryListData.data)
   const showCountries = () => {
     return countryListData.loading ? <LoadingSpinner /> : countryListData.errorMsg ? <h2>{countryListData.errorMsg}</h2> : (
-      <div className="countryList p-5">
+      <div className="country-list p-5">
         {
           countryListData.data.map(country => <CountryCard key={country.name} country={country} />)
         }
