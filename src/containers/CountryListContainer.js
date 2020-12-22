@@ -1,4 +1,6 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {fetchCountries} from '../redux'
 
 const CountryListContainer = () => {
   return (
@@ -16,8 +18,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCountries : () => dispatch(fetchUsers())
+    fetchCountries : () => dispatch(fetchCountries())
   }
 }
 
-export default CountryListContainer
+export default connect(mapStateToProps,mapDispatchToProps)(CountryListContainer)
