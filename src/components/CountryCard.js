@@ -21,7 +21,7 @@ const CountryCard = ({ country }) => (
           Capital:
           {country.capital}
         </p>
-        <Link className="btn btn-info" to={`/country/${country.name}`}>View</Link>
+        <Link className="btn btn-info" to={`/country/${country.name}`}>View Details</Link>
       </div>
     </div>
   </div>
