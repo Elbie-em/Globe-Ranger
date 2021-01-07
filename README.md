@@ -19,7 +19,7 @@ Building a React and Redux front-end application using the REST countries API se
 - ES6
 - jest
 - eslint
-- style lint
+- stylelint
 
 ## Getting Started
 
