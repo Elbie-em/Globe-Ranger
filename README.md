@@ -1,5 +1,5 @@
 # Globe Ranger- React/Redux Capstone
-Building a React and Redux front-end application using the REST countries API service. bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This application uses Routing to traverse between a list of countries and details of a country when clicked.
+Building a React and Redux front-end application using the REST countries API service. bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This application uses Routing to traverse between a list of countries and details of a country when it is clicked.
 
 # Live Demo
 
@@ -14,6 +14,7 @@ Building a React and Redux front-end application using the REST countries API se
 - React-Create-App
 - REST Countries API
 - npm
+- Heroku
 - CSS
 - ES6
 - jest
