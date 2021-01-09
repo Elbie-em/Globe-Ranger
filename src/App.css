@@ -1,3 +1,63 @@
-.App {
-  text-align: center;
+nav {
+  background-color: #2b3945;
+}
+
+body {
+  background-color: #202c37;
+}
+
+.brand-font {
+  font-size: 40px;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Comfortaa', cursive;
+}
+
+.country-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.flag-sm {
+  width: 317px;
+  height: 232px;
+}
+
+.flag-lg {
+  width: 50%;
+  height: 50%;
+}
+
+.country-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.region-filter {
+  width: 50%;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.region-label {
+  font-size: 20px;
+  color: #fff;
+  font-family: 'Comfortaa', cursive;
+}
+
+.region-area {
+  width: 100%;
+  margin: 20px;
 }
